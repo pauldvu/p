@@ -1,0 +1,21 @@
+{
+  "name": "v3",
+  "scripts": {
+    "dev": "bun src/index.ts --watch",
+    "lint": "bunx @biomejs/biome check src",
+    "lint:fix": "bun lint --apply",
+    "migration:generate": "bunx drizzle-kit generate:sqlite",
+    "migration:push": "bun src/db/migrate.ts",
+    "migrate": "bun migration:generate && bun migration:push"
+  },
+  "dependencies": {
+    "elysia": "^0.8.15",
+    "drizzle-orm": "^0.29.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/bun": "^1.0.4",
+    "@biomejs/biome": "^1.5.3",
+    "drizzle-kit": "^0.20.13"
+  }
+}
